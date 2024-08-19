@@ -12,6 +12,8 @@ class ReelsPage extends StatefulWidget {
 class _ReelsPageState extends State<ReelsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Text('Reels Page', style: TextStyle(color: Colors.white),),
+    );
   }
 }

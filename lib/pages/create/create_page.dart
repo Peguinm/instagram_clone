@@ -12,6 +12,8 @@ class CreatePage extends StatefulWidget {
 class _CreatePageState extends State<CreatePage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Center(
+      child: Text('Creation Page', style: TextStyle(color: Colors.white),),
+    );
   }
 }

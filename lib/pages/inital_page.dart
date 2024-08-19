@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home/pages/create/create_page.dart';
 import 'package:instagram_home/pages/home/home_page.dart';
+import 'package:instagram_home/pages/profile/profile_page.dart';
+import 'package:instagram_home/pages/reels/reels_page.dart';
+import 'package:instagram_home/pages/search/search_page.dart';
 
 class InitalPage extends StatefulWidget {
   static String pageRoute = '/';
@@ -21,9 +25,9 @@ class _InitalPageState extends State<InitalPage> {
         Container(
           width: 30,
           decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: const BorderRadius.all(Radius.circular(100)),
-              border: Border.all(color: Colors.black, width: 1),
+            color: Colors.transparent,
+            borderRadius: const BorderRadius.all(Radius.circular(100)),
+            border: Border.all(color: Colors.black, width: 1),
           ),
           child: Image.network(
             'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/252.png',
@@ -35,8 +39,8 @@ class _InitalPageState extends State<InitalPage> {
           width: 30,
           height: 30,
           decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(100)),
-              border: border,
+            borderRadius: const BorderRadius.all(Radius.circular(100)),
+            border: border,
           ),
         )
       ],
@@ -120,10 +124,10 @@ class _InitalPageState extends State<InitalPage> {
           index: _selectedIndex,
           children: const [
             HomePage(),
-            HomePage(),
-            HomePage(),
-            HomePage(),
-            HomePage(),
+            SearchPage(),
+            CreatePage(),
+            ReelsPage(),
+            ProfilePage(),
           ],
         ));
   }

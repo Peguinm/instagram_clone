@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home/pages/home/feed_post.dart';
+import 'package:instagram_home/pages/home/stories_profile.dart';
 import 'package:instagram_home/pages/inital_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static String pageRoute = '/home_page';
   static const heightBottomNavigation = InitalPage.heightBottomNavigation;
 
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -14,7 +21,7 @@ class HomePage extends StatelessWidget {
     final heightPostContainer = mediaQuery.size.height -
         kToolbarHeight -
         mediaQuery.padding.top -
-        heightBottomNavigation -
+        HomePage.heightBottomNavigation -
         mediaQuery.padding.bottom -
         100.0;
 
@@ -23,18 +30,17 @@ class HomePage extends StatelessWidget {
         //
         //stories list
         Container(
-          height: 120,
+          height: 135,
+          padding: const EdgeInsets.only(
+            left: 10,
+          ),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             //
             itemCount: 10,
             itemBuilder: (context, index) {
               // print(index);
-              return Container(
-                width: 100.0,
-                color: Color.fromRGBO(
-                    90 * index, 255 - index * 30, 255 - index * 10, 1.0),
-              );
+              return StoriesProfile();
             },
           ),
         ),
@@ -43,14 +49,13 @@ class HomePage extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             scrollDirection: Axis.vertical,
+            primary: false,
             //
             itemCount: 1000,
             itemBuilder: (context, index) {
-              print(index);
-              return Container(
+              return SizedBox(
                 height: heightPostContainer,
-                color: Color.fromRGBO(
-                    120 * (index + 1), 255 - index * 20, 255 - (index + 1) * 50, 1.0),
+                child: const FeedPost(),
               );
             },
           ),
