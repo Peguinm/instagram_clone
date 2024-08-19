@@ -1,16 +1,7 @@
-# instagram_home
+# Instagram Clone
 
-A new Flutter project.
+Project developed for study purposes.
+Just a simple project copying the Instagram UI. There's not any real function inside the app.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Only home page is "done"
+I'll develop the others pages UIs and, maybe, add web data fetch for simulate posts and users
